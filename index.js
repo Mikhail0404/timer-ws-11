@@ -51,7 +51,7 @@ app.use(cookieParser());
 const dbConnect = async () => {
   try {
     const client = await clientPromise;
-    return client.db("timer");
+    return client.db(process.env.DB_NAME);
   } catch (e) {
     throw e;
   }
